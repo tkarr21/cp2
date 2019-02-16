@@ -56,6 +56,13 @@ div {
     vertical-align: baseline;
 }
 
+#but-align {
+    text-align: center;
+}
+
+#message {
+    text-align: center;
+}
 
 
 /* Menu */
@@ -77,6 +84,25 @@ div {
  
 .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
     color: rgb(254, 147, 17) !important;
+}
+
+
+/* spotify api */
+#login, #loggedin {
+display: none;
+}
+.text-overflow {
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+width: 500px;
+}
+
+#login-button {
+    align-self: center;
+    color: #666;
+    background-color: #92eaf4;
+    border-color: #92eaf4;
 }
 
 

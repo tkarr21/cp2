@@ -1,14 +1,20 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
+  <head>
+    
+    
+    
+    
+    
 
-<head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/styles.css" />
-    
-    <title>Spotify</title>
-</head>
 
-<body>
+    <title>Spotify</title>
+
+  </head>
+
+  <body>
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <a class="navbar-brand" href="#"><img id="menu-img" alt="brand" src="../images/icons8-spotify-512.png"/></a>
@@ -36,34 +42,82 @@
 
     <h1>Spotify</h1>
 
-    <div id="playlist">
-        <h2>Your Playlists</h2>
-
-        <iframe id="spotify" src="https://open.spotify.com/embed/playlist/1p7Rm3fNy3tzHNCs0NhcDu" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-        
-    </div>
-
-    <div id="playlist">
-
-        <iframe id="spotify" src="https://open.spotify.com/embed/playlist/1nt9c9IUR2ZJVIn1mpwQ40" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-        
-    </div>
-
     
+    <div class="container">
+            <div id="login">
+              <h1>Allow spotify access here</h1>
+              <div id='but-align'>
+              <button id="login-button" class="btn btn-primary">Log in with Spotify</button>
+              </div>    
+            </div>
+            <div id="loggedin">
+              <div id="user-profile">
+              </div>
+              <div id="oauth">
+              </div>
+              
+              <div id="user-tracks">
+              </div>
+           
+            </div>
+          </div>
+      
+          <script id="user-profile-template" type="text/x-handlebars-template">
+            <h1>Logged in as {{display_name}}</h1>
+            <div class="media">
+              <div class="pull-left">
+                <img class="media-object" width="150" src="{{images.0.url}}" />
+              </div>
+              <div class="media-body">
+                <dl class="dl-horizontal">
+                  <dt>Display name</dt><dd class="clearfix">{{display_name}}</dd>
+                  <dt>Id</dt><dd>{{id}}</dd>
+                  <dt>Email</dt><dd>{{email}}</dd>
+                  <dt>Spotify URI</dt><dd><a href="{{external_urls.spotify}}">{{external_urls.spotify}}</a></dd>
+                  <dt>Link</dt><dd><a href="{{href}}">{{href}}</a></dd>
+                  <dt>Profile Image</dt><dd class="clearfix"><a href="{{images.0.url}}">{{images.0.url}}</a></dd>
+                  <dt>Country</dt><dd>{{country}}</dd>
+                </dl>
+              </div>
+            </div>
+          </script>
+      
+          <script id="oauth-template" type="text/x-handlebars-template">
+            <h2>oAuth info</h2>
+            <dl class="dl-horizontal">
+              <dt>Access token</dt><dd class="text-overflow">{{access_token}}</dd>
+            </dl>
+          </script>
 
-
-
-    
-
-    <footer>
-        <p class="pull-left">https://github.com/tkarr21/cp1.git</p>
+          
+          <script id="user-tracks-template" type="text/x-handlebars-template">
+            <h2>Your Tracks</h2>
+                <div class="media">
+                    <div class="media-body">
+                        <dl class="dl-horizontal">
+                            <dt>Total tracks in Library</dt><dd>{{total}}</dd>
+                        </dl>
+                    </div>
+                </div>
+            </script>
+           
+          <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
+          <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+          <script text="type/javascript" src="../script.js">
             
-    </footer>
+          </script>
+      
+        <footer>
+            <p class="pull-left">https://github.com/tkarr21/cp2.git</p>
+            
+        </footer>
 
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-</body>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+        <script text="type/javascript" src="/script.js"></script>
+    </body>
 </html>
+
